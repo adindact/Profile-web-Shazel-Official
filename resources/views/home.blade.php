@@ -97,7 +97,7 @@
                         <div class="row justify-content-center border-catalog">
                             <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
                                 <div class="project background-items-catalog">
-                                    <img src="./assets/images/p-3.jpg" alt="">
+                                    <img src="./assets/images/bracelet-2.jpg" alt="">
                                     <div class="row">
                                         <div class="col">
                                             <div class="product-name">
@@ -112,7 +112,7 @@
                                                     detail</a>
                                             </div>
                                             <div class="content">
-                                                <a href="./assets/images/p-3.jpg" data-fancybox="gallery"
+                                                <a href="./assets/images/bracelet-2.jpg" data-fancybox="gallery"
                                                     class="btn btn-outline-light">View Detail</a>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                                 <div class="project background-items-catalog">
-                                    <img src="./assets/images/p-4.jpg" alt="">
+                                    <img src="./assets/images/bracelet-2.jpg" alt="">
 
                                     <div class="row">
                                         <div class="col">
@@ -138,7 +138,7 @@
                                                     detail</a>
                                             </div>
                                             <div class="content">
-                                                <a href="./assets/images/p-4.jpg" data-fancybox="gallery"
+                                                <a href="./assets/images/bracelet-2.jpg" data-fancybox="gallery"
                                                     class="btn btn-outline-light">View Detail</a>
                                             </div>
 
@@ -148,7 +148,7 @@
                             </div>
                             <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
                                 <div class="project background-items-catalog">
-                                    <img src="./assets/images/p-5.jpg" alt="">
+                                    <img src="./assets/images/bracelet-2.jpg" alt="">
                                     <div class="row">
                                         <div class="col">
                                             <div class="product-name">
@@ -163,7 +163,7 @@
                                                     class="btn btn-view-price">view
                                                     detail</a>
                                                 <div class="content">
-                                                    <a href="./assets/images/p-5.jpg" data-fancybox="gallery"
+                                                    <a href="./assets/images/bracelet-2.jpg" data-fancybox="gallery"
                                                         class="btn btn-outline-light">View Detail</a>
                                                 </div>
                                             </div>
@@ -201,15 +201,17 @@
                 <div class="col">
                     <div class="setion-title text-justify background-layanan" data-aos="fade-left"
                         data-aos-delay="100">
+                        <div class="text-title-pemesanan">
+                            Cara Pemesanan
+                        </div>
                         <div class="text-home-layanan ">
-                            <p>SHAZEL merupakan brand lokal di industri fashion aksesoris yang mengutamakan casual
-                                elegan
-                                karena kami percaya bahwa dengan seseorang menambah sentuhan aksen pemanis dari
-                                aksesoris
-                                yang dipakai dapat mengubah looks menjadi nilai tambah keestetikaannya. Kami menyediakan
-                                produk aksesoris yang dapat digunakan di segala kegiatan bagi para pelanggan untuk
-                                mendorong
-                                mereka mengembangkan kecantikan mereka.</p>
+                            <p>Anda dapat dengan mudah melakukan pemesanan produk favorit Anda melalui online shop kami
+                                ataupun Selain itu, kami juga menyediakan opsi untuk melakukan pemesanan
+                                melalui platform Instagram kami. Cukup kunjungi akun Instagram kami dan kirimkan pesan
+                                langsung untuk melakukan pemesanan. Dengan dua opsi ini, kami ingin memastikan bahwa
+                                pelanggan kami memiliki kemudahan dalam melakukan pembelian, di mana pun dan kapan pun
+                                mereka inginkan.
+                            </p>
                         </div>
                         <div data-aos="fade-down" data-aos-delay="200"><a href="#"
                                 class="btn btn-layanan">view
@@ -222,15 +224,15 @@
                 <div class="col-md-8">
                     <div class="setion-title text-justify background-layanan" data-aos="fade-right"
                         data-aos-delay="100">
+                        <div class="text-title-pemesanan">
+                            Cara Pembayaran
+                        </div>
                         <div class="text-home-layanan">
-                            <p>SHAZEL merupakan brand lokal di industri fashion aksesoris yang mengutamakan casual
-                                elegan
-                                karena kami percaya bahwa dengan seseorang menambah sentuhan aksen pemanis dari
-                                aksesoris
-                                yang dipakai dapat mengubah looks menjadi nilai tambah keestetikaannya. Kami menyediakan
-                                produk aksesoris yang dapat digunakan di segala kegiatan bagi para pelanggan untuk
-                                mendorong
-                                mereka mengembangkan kecantikan mereka.</p>
+                            <p>Kami menyediakan fleksibilitas dalam proses pembayaran untuk memudahkan pelanggan kami.
+                                Ketika Anda melakukan pemesanan melalui Instagram, Anda dapat membayar melalui transfer
+                                bank sesuai dengan instruksi yang akan kami berikan melalui pesan langsung. Di sisi
+                                lain, ketika Anda melakukan pembelian melalui online shop kami, Anda dapat memilih dari
+                                berbagai opsi pembayaran yang tersedia.</p>
                         </div>
                         <div data-aos="fade-down" data-aos-delay="200"><a href="#"
                                 class="btn btn-layanan">view
