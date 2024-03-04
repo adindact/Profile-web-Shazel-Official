@@ -13,13 +13,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">Home</a>
+                    <a class="nav-link " href="/home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Product</a>
+                    <a class="nav-link " href="/product">Product</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Layanan</a>

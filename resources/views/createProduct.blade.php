@@ -12,7 +12,7 @@
         <div class="container">
           <div class="row">
               <div class="card " data-aos="zoom-in">
-                  <form method="POST" action="" enctype="multipart/form-data" >
+                <form method="POST" action="{{ route('admin.prosesCreateProduct') }}" enctype="multipart/form-data" >
                       <div style="padding-top: 10px;">
                       @csrf
                       <div style="max-width: 600px; margin: 0 auto;">
@@ -20,7 +20,7 @@
   
                           <tr>
                             <td><label for="judul">Nama Produk:</label></td>
-                            <td><input type="text" id="judul" name="judul" required style="margin-bottom: 10px;" ></td>
+                            <td><input type="text" id="judul" name="nama" required style="margin-bottom: 10px;" ></td>
                           </tr>
                           <tr>
                             <td><label for="image" class="form-label">Gambar Produk:</label></td>
@@ -28,24 +28,24 @@
                             
                           </tr>
                           <tr>
-                            <td><label for="paragraf1">Deskripsi Produk:</label></td>
-                            <td><textarea id="paragraf1" name="paragraf1" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                            <td><label for="deskripsi">Deskripsi Produk:</label></td>
+                            <td><textarea id="deskripsi" name="deskripsi" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
                           </tr>
                           <tr>
-                            <td><label for="paragraf2">Harga Produk:</label></td>
-                            <td><input type="number" id="paragraf2" name="paragraf2" style="width: 100%;  margin-bottom: 10px;"></input></td>
+                            <td><label for="harga">Harga Produk:</label></td>
+                            <td><input type="number" id="harga" name="harga" style="width: 100%;  margin-bottom: 10px;"></input></td>
                           </tr>
                           <tr>
-                            <td><label for="paragraf3">Link Shopee:</label></td>
-                            <td><input type="url" id="paragraf3" name="paragraf3" style="width: 100%; margin-bottom: 10px;"></url></td>
+                            <td><label for="shopee">Link Shopee:</label></td>
+                            <td><input type="url" id="shopee" name="shopee" style="width: 100%; margin-bottom: 10px;"></url></td>
                           </tr>
                           <tr>
-                            <td><label for="paragraf4">Link Toko Pedia:</label></td>
-                            <td><input type="url" id="paragraf4" name="paragraf4" style="width: 100%; margin-bottom: 10px;"></input></td>
+                            <td><label for="tokopedia">Link Toko Pedia:</label></td>
+                            <td><input type="url" id="tokopedia" name="tokopedia" style="width: 100%; margin-bottom: 10px;"></input></td>
                           </tr>
                           <tr>
-                            <td><label for="paragraf5">Paragraf 5:</label></td>
-                            <td><textarea id="paragraf5" name="paragraf5" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                            <td><label for="kode">Kode Produk:</label></td>
+                            <td><input type="number" id="kode" name="kode" style="width: 100%;  margin-bottom: 10px;"></input></td>
                           </tr>
                           
                         </table>
