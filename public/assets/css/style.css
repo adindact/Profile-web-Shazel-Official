@@ -245,6 +245,14 @@ img {
     font-weight:700px;
 }
 
+.text-title-pemesanan{
+    font-weight: medium;
+    font-size: 32px;
+    color: var(--c-dark);
+    padding-bottom: 10px;
+
+}
+
 .text-title-layanan{
     text-align: center;
     color: var(--c-light3);
@@ -427,7 +435,7 @@ img {
     padding-top: 0px;;
     position: relative;
     color: var(--c-dark);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 200px;
 }
 
