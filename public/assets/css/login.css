@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap');
+
+:root {
+    --login-bg: #f9f9f1;
+    --login-border: #d5af88;
+    --login-primary: #895b43;
+    --login-placeholder: #d5af88;
+    --login-brand: "Caesar Dressing", system-ui;
+}
+
+.login-text-brand {
+    font-family: var(--login-brand);
+    font-size: 3rem;
+    color: var(--login-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+
+.login-body {
+    background-color: var(--login-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-login-input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-login-input-group input {
+    border: 2px solid var(--login-border);
+    font-size: 0.9rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: 0.3s ease-in-out;
+    background-color: var(--login-bg);
+}
+
+.form-login-input-group input:focus {
+    border: 2px solid var(--login-primary);
+    box-shadow: none;
+    background-color: var(--login-bg);
+}
+
+.form-login-input-group input.is-invalid:focus {
+    box-shadow: none;
+    background-color: var(--login-bg);
+}
+
+.form-login-input-group input::placeholder {
+    color: var(--login-placeholder);
+    padding-left: 5px;
+    font-size: 0.5rem;
+    transform: translate3d(0, -2px, 0);
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.form-login-input-group input:focus::placeholder {
+    opacity: 0.5;
+}
+
+.form-login-input-group label {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 14px;
+    display: block;
+    margin-bottom: 0;
+    color: var(--login-primary);
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: var(--login-bg);
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+    transform-origin: 0 0;
+    transform: translateY(-50%);
+    text-align: left;
+    z-index: var(--label-z-index);
+}
+
+.login-text-primary {
+    color: var(--login-primary);
+}

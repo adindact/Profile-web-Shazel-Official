@@ -22,6 +22,7 @@ Route::get('/createProduct', function () {
 });
 Route::get('/home', function () {
     return view('home');
+// <<<<<<< Updated upstream
 });
 Route::get('/product', function () {
     return view('product');
@@ -31,3 +32,8 @@ route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController:
 
 Route::get('/product', [App\Http\Controllers\AdminController::class, 'showProduct'])->name('showProduct');
 
+Route::resource('login', App\Http\Controllers\LoginController::class)->names('login');
+
+Route::resource('register', App\Http\Controllers\RegisterController::class)->names('register');
+
+Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
