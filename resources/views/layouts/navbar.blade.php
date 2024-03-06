@@ -16,7 +16,7 @@
                     <a class="nav-link " href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="/about">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/product">Product</a>
@@ -30,7 +30,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item login">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
             </ul>
         </div>
