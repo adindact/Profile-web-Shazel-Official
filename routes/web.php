@@ -31,6 +31,9 @@ Route::get('/product', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/tabel', function () {
+    return view('template-tabel');
+});
 
 route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
 
