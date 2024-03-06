@@ -28,6 +28,10 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
 
 Route::get('/product', [App\Http\Controllers\AdminController::class, 'showProduct'])->name('showProduct');
