@@ -286,6 +286,7 @@ img {
 
 }
 
+
 .text-title-layanan{
     text-align: center;
     color: var(--c-light3);
@@ -807,3 +808,46 @@ footer ul li {
 .footer-bottom a {
     color: var(--c-medium);
 }
+
+.layanan-section-1{
+    position: relative;
+    padding-top: 50px;
+}
+
+.text-title-pesanan{
+    margin-top: -30px;
+    color: var(--c-dark);
+}
+.text-pemesanan-layanan{
+    color: var(--c-dark);
+    font-size: medium;
+    padding-top: 50px;
+}
+.text-title-pesanan{
+    color: var(--c-dark);
+    padding-top: 50px;
+}
+.text-pembayaran-layanan{
+    color: var(--c-light3);
+    font-size: medium;
+    padding-top: 70px;
+}
+.text-title-pembayaran{
+    color: var(--c-light3);
+    padding-top: 50px;
+}
+
+.cara-pemesanan{
+    background-position: center;
+    background-size: cover;
+    background-color: var(--c-light3);
+    position: relative;
+}
+.cara-pembayaran{
+    background-position: center;
+    background-size: cover;
+    background-color: var(--c-dark);
+    position: relative;
+    margin-top: -100px;
+}
+

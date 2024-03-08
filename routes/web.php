@@ -27,6 +27,9 @@ Route::get('/home', function () {
 Route::get('/product', function () {
     return view('product');
 });
+Route::get('/layanan', function () {
+    return view('layanan');
+});
 
 Route::get('/about', function () {
     return view('about');
