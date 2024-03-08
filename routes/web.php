@@ -22,12 +22,28 @@ Route::get('/createProduct', function () {
 });
 Route::get('/home', function () {
     return view('home');
+// <<<<<<< Updated upstream
 });
 Route::get('/product', function () {
     return view('product');
+});
+Route::get('/layanan', function () {
+    return view('layanan');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/tabel', function () {
+    return view('template-tabel');
 });
 
 route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
 
 Route::get('/product', [App\Http\Controllers\AdminController::class, 'showProduct'])->name('showProduct');
 
+Route::resource('login', App\Http\Controllers\LoginController::class)->names('login');
+
+Route::resource('register', App\Http\Controllers\RegisterController::class)->names('register');
+
+Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
