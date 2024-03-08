@@ -21,16 +21,15 @@
 
     <!-- Home -->
     <section id="home" class="d-flex align-items-center min-vh-100">
-        <div class="container">
+        <div class="container justify-content-center">
             <div class="row">
-                <div class="col-4 d-flex">
-                    @foreach ($product as $data)
-                        <div class="px-1 d-flex" data-aos="fade-up" data-aos-delay="100">
-                            <div class="row">
+                @foreach ($product as $data)
+                    <div class="col d-flex">
+                        <div class="px-5 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <div class="row mb-5 justify-content-center">
                                 <div class="project background-items-catalog " style="width:250px; height: 250px">
                                     <img src="{{ asset('storage/' . $data->image) }} " alt="">
                                     <div class="row">
-
                                         <div class="col colapse button-price">
                                             <div class="content">
                                                 <a href="./assets/images/p-5.jpg" data-fancybox="gallery"
@@ -39,22 +38,26 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row d-flex " style="padding-top: 275px;">
-                                <div class=" text-center">
-                                    <div class="">
-                                        {{ $data->nama }}
-                                    </div>
-                                    <div class="">
-                                        {{ $data->harga }}
+                                <div class="row" style="">
+                                    <div class=" text-center">
+                                        <div class="">
+                                            {{ $data->nama }}
+                                        </div>
+                                        <div class="">
+                                            Rp.
+                                            {{ $data->harga }}
+                                        </div>
                                     </div>
                                 </div>
+                                
                             </div>
 
+
+
                         </div>
-                    @endforeach
-                </div>
+
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

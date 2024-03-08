@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+
+
 class AdminController extends Controller
 {
     public function crud()
@@ -70,7 +72,8 @@ class AdminController extends Controller
             'tokopedia' => 'required',
             'image' => 'required|image|max:2048',
         ]);
-
+        
+        
     // Simpan data ke database
     $product = new Product;
     $product->nama = $request->nama;
@@ -88,10 +91,10 @@ class AdminController extends Controller
 
     }
     $product->image = $validatedData['image'];
-
+    
     $product->save();
-
-    return "Data berhasil disimpan ke database";
+    dd($request);
+    return view ('product');
     }
 
     
