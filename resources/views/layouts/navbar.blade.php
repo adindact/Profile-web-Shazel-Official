@@ -25,7 +25,7 @@
                     <a class="nav-link" href="/layanan">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Review</a>
+                    <a class="nav-link" href="/review">Review</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
