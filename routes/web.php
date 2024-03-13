@@ -38,12 +38,24 @@ Route::get('/tabel', function () {
     return view('template-tabel');
 });
 
-route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
 
+
+
+route::post('/product', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
 Route::get('/product', [App\Http\Controllers\AdminController::class, 'showProduct'])->name('showProduct');
+Route::get('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'showOneProduct'])->name('showOneProduct');
+Route::get('/dataProduct', [App\Http\Controllers\AdminController::class, 'adminShowProduct'])->name('admin.ShowProduct');
 
 Route::resource('login', App\Http\Controllers\LoginController::class)->names('login');
 
 Route::resource('register', App\Http\Controllers\RegisterController::class)->names('register');
 
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::class, 'updateProduct'])->name('updateProduct');
+Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
+
+Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
+
+    
+

@@ -17,8 +17,10 @@ return new class extends Migration
             $table->longText('nama');
             $table->longText('deskripsi');
             $table->longText('harga');
+            $table->longText('ukuran');
+            $table->longText('bahan');
+            $table->longText('perawatan');
             $table->longText('shopee')->nullable();
-            $table->longText('tokopedia')->nullable();
             $table->longText('image');
             $table->timestamps();
         });

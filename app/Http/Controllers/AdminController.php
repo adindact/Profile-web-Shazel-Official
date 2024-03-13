@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -18,47 +19,9 @@ class AdminController extends Controller
     {
         return view('createProduct');
     }
+   
 
-    // public function processCreateProduct(Request $request)
-    // {
-    //     // Validasi inputan form
-    //     $validatedData = $request->validate([
-    //         'kode' => 'required',
-    //         'nama' => 'required',
-    //         'deskripsi' => 'required',
-    //         'harga' => 'required',
-    //         'shopee' => 'required',
-    //         'tokopedia' => 'required',
-    //         'image' => 'required|image|max:2048',
-    //     ]);
 
-    //     Product::create($validatedData);
-
-    //     return "Data berhasil disimpan ke database";
-
-    // // Simpan data ke database
-    // $product = new Product;
-    // $edukasi->materi = $request->materi;
-    // $edukasi->judul = $request->judul;
-    // $edukasi->paragraf1 = $request->paragraf1;
-    // $edukasi->paragraf2 = $request->paragraf2;
-    // $edukasi->paragraf3 = $request->paragraf3;
-    // $edukasi->paragraf4 = $request->paragraf4;
-    // $edukasi->paragraf5 = $request->paragraf5;
-
-    // // Upload gambar jika ada
-    // if ($request->hasFile('image')) {
-    //     $imagePath = $request->file('image')->store('post-images', 'public');
-    //     $validatedData['image'] = $imagePath;
-
-    // }
-    // $edukasi->image = $validatedData['image'];
-
-    // $edukasi->save();
-
-    // // Redirect atau melakukan tindakan lainnya setelah menyimpan ke database
-    // return redirect()->route('aEdukasi');
-    // }
 
     public function processCreateProduct(Request $request)
     {
@@ -68,9 +31,11 @@ class AdminController extends Controller
             'nama' => 'required',
             'deskripsi' => 'required',
             'harga' => 'required',
+            'ukuran' => 'required',
+            'bahan' => 'required',
+            'perawatan' => 'required',
             'shopee' => 'required',
-            'tokopedia' => 'required',
-            'image' => 'required|image|max:2048',
+            'image' => 'required|image|max:5048',
         ]);
         
         
@@ -79,8 +44,10 @@ class AdminController extends Controller
     $product->nama = $request->nama;
     $product->deskripsi = $request->deskripsi;
     $product->harga = $request->harga;
+    $product->ukuran = $request->ukuran;
+    $product->bahan = $request->bahan;
+    $product->perawatan = $request->perawatan;
     $product->shopee = $request->shopee;
-    $product->tokopedia = $request->tokopedia;
     $product->kode = $request->kode;
 
 
@@ -93,16 +60,73 @@ class AdminController extends Controller
     $product->image = $validatedData['image'];
     
     $product->save();
-    dd($request);
-    return view ('product');
+    Return redirect()->route('showProduct');
     }
 
     
     
     public function showProduct(){
-        $product = Product::all();
-        
-        return view('product', compact('product'));
-        
+    $product = Product::all();
+    return view('product', ['product' => $product]);
     }
+
+
+    public function showOneProduct(Product $product) {
+        return view('spesifikProduct', ['product' => $product]);
+    }
+    
+
+    public function adminShowProduct(){
+        $product = Product::all();
+        return view('dataProduct', ['product' => $product]);
+    }
+
+
+
+    public function updateProduct(Product $product){
+        return view('updateProduct', ['product' => $product]);
+    }
+
+    public function processUpdateProduct(Request $request){
+        // Validasi data yang dikirimkan oleh formulir
+        $validatedData = $request->validate([
+            'kode' => 'required',
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'harga' => 'required',
+            'ukuran' => 'required',
+            'bahan' => 'required',
+            'perawatan' => 'required',
+            'shopee' => 'required',
+            'image' => 'image|max:5048', // Gambar bersifat opsional
+        ]);
+    
+        // Jika ada gambar yang diunggah, simpan gambar baru
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama jika ada
+            Storage::delete('public/' . $request->image->path());
+    
+            // Simpan gambar baru
+            $imagePath = $request->file('image')->store('public/images');
+            $validatedData['image'] = str_replace('public/', '', $imagePath);
+        }
+    
+        // Update data produk dengan data yang baru divalidasi
+        $product = Product::where('kode', $validatedData['kode'])->first();
+        $product->update($validatedData);
+    
+
+    
+    
+        // Redirect ke halaman yang sesuai, misalnya halaman detail produk
+        return redirect()->route('admin.ShowProduct', ['product' => $product]);
+    }
+
+    public function deleteProduct(Product $product){
+        $product->delete();
+        return redirect()->route('admin.ShowProduct');
+    }
+    
+    
+    
 }
