@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,14 @@ Route::get('/tabel', function () {
     return view('template-tabel');
 });
 
+Route::get('/review', function () {
+    return view('review');
+});
+
+Route::get('/review', function () {
+    return view('review');
+});
+
 
 
 
@@ -51,6 +60,9 @@ Route::resource('login', App\Http\Controllers\LoginController::class)->names('lo
 Route::resource('register', App\Http\Controllers\RegisterController::class)->names('register');
 
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/review', [ReviewController::class, 'showReviewForm'])->name('show.review.form');
+Route::post('/review/submit', [ReviewController::class, 'submitReview'])->name('submit.review');
 
 Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::class, 'updateProduct'])->name('updateProduct');
 Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
