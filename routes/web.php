@@ -48,6 +48,7 @@ Route::get('/review', function () {
 });
 
 
+route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
 
 
 route::post('/product', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
