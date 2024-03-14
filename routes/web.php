@@ -3,11 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\CRUDReviewController;
-=======
 use App\Http\Controllers\ForgotPasswordController;
->>>>>>> 4db09e70d43146f824926a97c4a5b527eb5e0fbe
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +27,6 @@ Route::get('/createProduct', function () {
 });
 // Route::get('/home', function () {
 //     return view('home');
-// // <<<<<<< Updated upstream
 // });
 Route::get('/product', function () {
     return view('product');
@@ -71,9 +69,4 @@ Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::cla
 
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
 
-<<<<<<< HEAD
 Route::post('/submit-crudreview', [CRUDReviewController::class, 'submitReview'])->name('submit.crudreview');
-=======
->>>>>>> 4db09e70d43146f824926a97c4a5b527eb5e0fbe
-
-
