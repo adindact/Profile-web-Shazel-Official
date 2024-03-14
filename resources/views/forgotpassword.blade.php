@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Shazel Official</title>
+    <title>Forgot Password | Shazel Official</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/login.css">
@@ -14,7 +14,7 @@
         <div class="text-center">
             <h1 class="login-text-brand">Shazel</h1>
         </div>
-        <h3 class="text-center login-text-primary mb-5"><b>Login</b></h3>
+        <h3 class="text-center login-text-primary mb-5"><b>Forgot Password</b></h3>
 
         @if (session('error'))
         <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
@@ -23,7 +23,7 @@
           </div>
         @endif
 
-        <form action="{{ route('login.store') }}" method="post">
+        <form action="{{ route('forgotpassword.update') }}" method="post">
             @csrf
             <div class="mb-4">
                 <div class="form-login-input-group">
@@ -36,27 +36,42 @@
                     </div>
                 </div>
             </div>
+            <div class="form-login-input-group">
+                <label for="name">Masukkan Nama</label>
+                <input id="name" name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Nama" value="{{ old('name') }}" />
+                <div class="invalid-feedback">
+                    @error('name')
+                        {{ $message }}
+                    @enderror
+                </div>
+            </div>
             <div class="mb-4">
                 <div class="form-login-input-group">
-                    <label for="password">Masukkan Password</label>
-                    <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" />
+                    <label for="password1">Masukkan Password</label>
+                    <input type="password" id="password1" name="password1" class="form-control @error('password1') is-invalid @enderror" placeholder="Password Baru" />
                     <div class="invalid-feedback">
-                        @error('password')
+                        @error('password1')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="form-login-input-group">
+                    <label for="password2">Masukkan Password</label>
+                    <input type="password" id="password2" name="password2" class="form-control @error('password2') is-invalid @enderror" placeholder="Konfirmasi Password Baru" />
+                    <div class="invalid-feedback">
+                        @error('password2')
                             {{ $message }}
                         @enderror
                     </div>
                 </div>
             </div>
             <div class="d-grid mt-5">
-                <button type="submit" class="btn btn-brand">Login</button>
+                <button type="submit" class="btn btn-brand">Forgot Password</button>
             </div>
-            <div class="text-center flex">
-                <div class="div flex">
-                    <a href="{{ route('register.index') }}">Register</a>
-                </div>
-                <div class="div">
-                    <a href="{{ route('forgotpassword.show') }}">Forgot Password</a>
-                </div>
+            <div class="text-center">
+                <a href="{{ route('register.index') }}">Register</a>
             </div>
         </form>
     </div>

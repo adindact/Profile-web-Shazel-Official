@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +22,10 @@ Route::get('/', function () {
 Route::get('/createProduct', function () {
     return view('createProduct');
 });
-Route::get('/home', function () {
-    return view('home');
-// <<<<<<< Updated upstream
-});
+// Route::get('/home', function () {
+//     return view('home');
+// // <<<<<<< Updated upstream
+// });
 Route::get('/product', function () {
     return view('product');
 });
@@ -60,6 +61,9 @@ Route::resource('login', App\Http\Controllers\LoginController::class)->names('lo
 
 Route::resource('register', App\Http\Controllers\RegisterController::class)->names('register');
 
+Route::get('/forgotpassword', [ForgotPasswordController::class, 'showForgetForm'])->name('forgotpassword.show');
+Route::post('/forgotpassword', [ForgotPasswordController::class, 'updatePassword'])->name('forgotpassword.update');
+
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/review', [ReviewController::class, 'showReviewForm'])->name('show.review.form');
@@ -70,5 +74,5 @@ Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::cla
 
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
 
-    
+
 
