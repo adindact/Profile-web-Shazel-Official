@@ -6,7 +6,7 @@
 
 /* Variables */
 :root {
-    --c-brand: #f83691;
+    --c-brand: #F9F9F1;
     --c-brand-rgb: 248, 54, 145;
     --c-dark: #895B43;
     --c-dark2: #A07A65;
@@ -849,5 +849,9 @@ footer ul li {
     background-color: var(--c-dark);
     position: relative;
     margin-top: -100px;
+}
+
+.nav-logout{
+    position: relative;
 }
 
