@@ -1,0 +1,94 @@
+.containerreview {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 80px;
+    background-color: #f9f9f1;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-top: 25px;
+    color: #895b43; /* Mengubah warna teks */
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-size: 35px;
+    font-style: normal;
+    text-align: start;
+    padding-left: 100px;
+    color: #895b43; /* Mengubah warna teks */
+    padding-top: 20px;
+}
+
+.rating-stars {
+    font-size: 50px;
+    text-align: center; /* Untuk membuat bintang-bintang berada di tengah */
+    padding-bottom: 20px;
+}
+
+.rating-stars i {
+    background-color: #f9f9f1; /* Mengatur warna latar belakang sebelum hover */
+}
+
+.rating-stars i:hover {
+    color: gold;
+}
+
+input[type="number"],
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-upload-pictures,
+.form-upload-videos {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #d5af88;
+    border-radius: 10px;
+    width: 260px; /* Adjust width as needed */
+    text-align: center; /* Remove text-align for individual sections */
+    background-color: #f9f9f1;
+    width: 500px;
+    height: 200px;
+    margin-bottom: 45px;
+}
+
+/* Smaller image size */
+.form-upload-pictures img,
+.form-upload-videos img {
+    width: 75px; /* Adjust width as needed */
+    height: 75px; /* Adjust height as needed */
+    margin-bottom: 10px; /* Add space between image and label */
+    margin-top: 50px;
+}
+
+.form-upload-pictures {
+    float: left;
+    margin-left: 100px;
+}
+.form-upload-videos {
+    float: right;
+    margin-right: 100px;
+}
