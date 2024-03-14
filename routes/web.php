@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
+<<<<<<< HEAD
+use App\Http\Controllers\CRUDReviewController;
+=======
 use App\Http\Controllers\ForgotPasswordController;
+>>>>>>> 4db09e70d43146f824926a97c4a5b527eb5e0fbe
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,12 +44,8 @@ Route::get('/tabel', function () {
     return view('template-tabel');
 });
 
-Route::get('/review', function () {
-    return view('review');
-});
-
-Route::get('/review', function () {
-    return view('review');
+Route::get('/crudreview', function () {
+    return view('crudreview');
 });
 
 
@@ -66,13 +66,14 @@ Route::post('/forgotpassword', [ForgotPasswordController::class, 'updatePassword
 
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 
-Route::get('/review', [ReviewController::class, 'showReviewForm'])->name('show.review.form');
-Route::post('/review/submit', [ReviewController::class, 'submitReview'])->name('submit.review');
-
 Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::class, 'updateProduct'])->name('updateProduct');
 Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
 
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
 
+<<<<<<< HEAD
+Route::post('/submit-crudreview', [CRUDReviewController::class, 'submitReview'])->name('submit.crudreview');
+=======
+>>>>>>> 4db09e70d43146f824926a97c4a5b527eb5e0fbe
 
 
