@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Review; // Gantilah Review dengan model Anda
 
 class CRUDReviewController extends Controller
 {
@@ -13,16 +14,22 @@ class CRUDReviewController extends Controller
             'review_text' => 'required|string',
         ]);
 
-        // Save review data (replace with your logic to save review data)
-        $review = [
-            'user_id' => auth()->id(), // Assuming you have a user logged in
-            'product_id' => $request->get('product_id'), // Assuming you have product_id field
-            'rating' => count($request->get('clickedStars')), // Assuming clickedStars holds selected rating
-            'review_text' => $request->get('review_text'),
-        ];
+        // Save review data
+        $review = new Review();
+        $review->user_id = auth()->id();
+        $review->product_id = $request->product_id; // Sesuaikan dengan nama field yang digunakan di form
+        $review->review_text = $request->review_text;
+        
+        // Check if clickedStars is not null before using count
+        $clickedStars = $request->clickedStars;
+        if ($clickedStars !== null) {
+            $review->rating = count($clickedStars);
+        } else {
+            // Handle case when clickedStars is null
+            $review->rating = 0; // Or any default value you prefer
+        }
 
-        // Logic to store the review in database
-        // ...
+        $review->save();
 
         return redirect()->back()->with('success', 'Review submitted successfully!');
     }
