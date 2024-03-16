@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -19,7 +20,7 @@ class AdminController extends Controller
     {
         return view('createProduct');
     }
-   
+
 
 
 
@@ -37,8 +38,8 @@ class AdminController extends Controller
             'shopee' => 'required',
             'image' => 'required|image|max:5048',
         ]);
-        
-        
+
+
     // Simpan data ke database
     $product = new Product;
     $product->nama = $request->nama;
@@ -58,13 +59,13 @@ class AdminController extends Controller
 
     }
     $product->image = $validatedData['image'];
-    
+
     $product->save();
     Return redirect()->route('showProduct');
     }
 
-    
-    
+
+
     public function showProduct(){
     $product = Product::all();
     return view('product', ['product' => $product]);
@@ -74,11 +75,15 @@ class AdminController extends Controller
     public function showOneProduct(Product $product) {
         return view('spesifikProduct', ['product' => $product]);
     }
-    
+
 
     public function adminShowProduct(){
         $product = Product::all();
         return view('dataProduct', ['product' => $product]);
+    }
+    public function adminShowUsers(){
+        $users = User::all();
+        return view('dataUsers', ['users' => $users]);
     }
 
 
@@ -100,24 +105,24 @@ class AdminController extends Controller
             'shopee' => 'required',
             'image' => 'image|max:5048', // Gambar bersifat opsional
         ]);
-    
+
         // Jika ada gambar yang diunggah, simpan gambar baru
         if ($request->hasFile('image')) {
             // Hapus gambar lama jika ada
             Storage::delete('public/' . $request->image->path());
-    
+
             // Simpan gambar baru
             $imagePath = $request->file('image')->store('public/images');
             $validatedData['image'] = str_replace('public/', '', $imagePath);
         }
-    
+
         // Update data produk dengan data yang baru divalidasi
         $product = Product::where('kode', $validatedData['kode'])->first();
         $product->update($validatedData);
-    
 
-    
-    
+
+
+
         // Redirect ke halaman yang sesuai, misalnya halaman detail produk
         return redirect()->route('admin.ShowProduct', ['product' => $product]);
     }
@@ -126,7 +131,11 @@ class AdminController extends Controller
         $product->delete();
         return redirect()->route('admin.ShowProduct');
     }
-    
-    
-    
+    public function deleteUsers(User $users){
+        $users->delete();
+        return redirect()->route('admin.ShowUsers');
+    }
+
+
+
 }
