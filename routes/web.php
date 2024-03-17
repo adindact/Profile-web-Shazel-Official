@@ -58,4 +58,3 @@ Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->
 Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::class, 'updateProduct'])->name('updateProduct');
 Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
-Route::post('/submit-crudreview', [CRUDReviewController::class, 'submitReview'])->name('submit.crudreview');
