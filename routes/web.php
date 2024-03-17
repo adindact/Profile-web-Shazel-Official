@@ -38,6 +38,9 @@ Route::get('/about', function () {
 Route::get('/tabel', function () {
     return view('template-tabel');
 });
+Route::get('/review', function () {
+    return view('review');
+});
 Route::get('/crudreview', function () {
     return view('crudreview');
 });

@@ -35,6 +35,8 @@
                             <img src="./assets/images/Star.png" alt="4 stars" data-value="4">
                             <img src="./assets/images/Star.png" alt="5 stars" data-value="5">
                         </div>
+                        <!-- Tambahkan input tersembunyi untuk menyimpan bintang yang dipilih -->
+                        <input type="hidden" name="clickedStars[]" id="clickedStars">
                         <div class="row justify-content-center">
                             <div class="col-md-6">
                                 <div class="form-upload-pictures">
@@ -51,6 +53,7 @@
                         </div>
                         <div class="row2 justify-content-center">
                             <div class="col-md-12">
+                                <!-- Ubah name pada textarea -->
                                 <textarea name="review_text" id="review_text" rows="4" required placeholder="Bagikan pengalamanmu dengan produk ini..."></textarea>
                             </div>
                         </div>
