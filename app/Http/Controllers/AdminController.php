@@ -135,7 +135,4 @@ class AdminController extends Controller
         $users->delete();
         return redirect()->route('admin.ShowUsers');
     }
-
-
-
 }

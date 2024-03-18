@@ -188,7 +188,7 @@ h6,
     color: var(--c-dark);
 } */
 
-a {
+/* a {
     text-decoration: none;
     color: var(--c-dark);
     transition: var(--transition);
@@ -196,7 +196,7 @@ a {
 
 a:hover {
     color: var(--c-brand);
-}
+} */
 
 img {
     width: 100%;
@@ -853,5 +853,45 @@ footer ul li {
 
 .nav-logout{
     position: relative;
+    /* padding-left: 10px; */
 }
+
+/* .data{
+    position: relative;
+    z-index: 1;
+    padding-top: 7px;
+    margin-left: -20px;
+    margin-right: 5px;
+} */
+
+.lihatdata{
+    position: relative;
+    padding-top: 130px;
+    padding-bottom: 60px;
+    background-color: var(--c-light3);
+}
+.icon-data{
+    padding-top: 60px;
+    padding-left: 50px;
+}
+
+.text-data{
+    z-index: 1;
+    position: relative;
+    padding-top: 110px;
+    padding-left: 20px;
+    color: var(--c-light3);
+    font-size: 30px;
+    font-weight:700px;
+}
+.text-data:hover{
+    z-index: 1;
+    position: relative;
+    padding-top: 110px;
+    padding-left: 20px;
+    color: var(--c-light3);
+    font-size: 30px;
+    font-weight:700px;
+}
+
 

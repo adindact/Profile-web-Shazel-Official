@@ -32,6 +32,9 @@ Route::get('/product', function () {
 Route::get('/layanan', function () {
     return view('layanan');
 });
+Route::get('/lihatdata', function () {
+    return view('lihatdata');
+});
 Route::get('/about', function () {
     return view('about');
 });
@@ -50,6 +53,9 @@ route::post('/product', [App\Http\Controllers\AdminController::class, 'processCr
 Route::get('/product', [App\Http\Controllers\AdminController::class, 'showProduct'])->name('showProduct');
 Route::get('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'showOneProduct'])->name('showOneProduct');
 Route::get('/dataProduct', [App\Http\Controllers\AdminController::class, 'adminShowProduct'])->name('admin.ShowProduct');
+Route::get('/dataUsers', [App\Http\Controllers\AdminController::class, 'adminShowUsers'])->name('admin.ShowUsers');
+
+// Route::get('/lihatdata', [App\Http\Controllers\AdminController::class, 'adminUsers'])->name('admin.Users');
 Route::resource('login', App\Http\Controllers\LoginController::class)->names('login');
 Route::resource('register', App\Http\Controllers\RegisterController::class)->names('register');
 Route::get('/forgotpassword', [ForgotPasswordController::class, 'showForgetForm'])->name('forgotpassword.show');
@@ -58,3 +64,4 @@ Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->
 Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::class, 'updateProduct'])->name('updateProduct');
 Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
+Route::delete('/users/{users:id}', [App\Http\Controllers\AdminController::class, 'deleteUsers'])->name('admin.deleteUsers');
