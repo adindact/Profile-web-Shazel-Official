@@ -41,7 +41,11 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 674f225f71ea2a811099fb7f6c915904f161a3f8
                         <!-- Bukti testimoni -->
                         <br>
                         <img src="./assets/images/testimoni.png" alt="Bukti Testimoni" class="testimony">
@@ -71,7 +75,11 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 674f225f71ea2a811099fb7f6c915904f161a3f8
                         <!-- Bukti testimoni -->
                         <br>
                         <img src="./assets/images/testimoni.png" alt="Bukti Testimoni" class="testimony">

@@ -126,13 +126,13 @@ button {
     background-color: #895b43;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    display: block; /* Tampilkan tombol sebagai blok */
-    margin: 0 auto; /* Tengahkan tombol */
-    margin-top: 20px; /* Tambahkan ruang atas */
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
     margin-bottom: 30px;
-    width: 150px; /* Tentukan lebar tombol */
+    width: 150px;
 }
 button:hover {
     background-color: #6e4936;
