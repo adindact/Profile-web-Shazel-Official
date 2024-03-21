@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shazel Official</title>
+    <title>Ellora Official</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -40,7 +40,7 @@
                     </button>
                 </div>
             </div>
-    
+
                 <!-- Modal for View Detail -->
                 {{-- <div class="modal fade" id="viewDetailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -64,10 +64,10 @@
                         </div>
                     </div>
                 </div> --}}
-            
+
         </div>
     </section>
-    
+
 
     @include('layouts.footer')
 

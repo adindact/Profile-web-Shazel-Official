@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password | Shazel Official</title>
+    <title>Forgot Password | Ellora Official</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/login.css">
@@ -12,7 +12,7 @@
 <body class="login-body">
     <div class="col-10 col-md-6 col-lg-5 col-xl-4">
         <div class="text-center">
-            <h1 class="login-text-brand">Shazel</h1>
+            <h1 class="login-text-brand">Ellora</h1>
         </div>
         <h3 class="text-center login-text-primary mb-5"><b>Forgot Password</b></h3>
 

@@ -65,3 +65,7 @@ Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::c
 Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
 Route::delete('/users/{users:id}', [App\Http\Controllers\AdminController::class, 'deleteUsers'])->name('admin.deleteUsers');
+
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');

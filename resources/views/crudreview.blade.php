@@ -12,40 +12,43 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- Navbar -->
     @include('layouts.navbar')
-    
+
     <!-- Success message alert -->
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    
+
     <div class="containercrud">
         <section class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="containerreview">
                     <h1>Tambahkan Review</h1>
-                    <form action="{{ route('submit.crudreview') }}" method="POST">
+                    <form action="{{ route('reviews.store') }}" method="POST">
                         @csrf
                         <h2 class="review_text">Kualitas Produk</h2>
                         <div class="rating-stars">
+                            <!-- Rating stars images -->
                             <img src="./assets/images/Star.png" alt="1 stars" data-value="1">
                             <img src="./assets/images/Star.png" alt="2 stars" data-value="2">
                             <img src="./assets/images/Star.png" alt="3 stars" data-value="3">
                             <img src="./assets/images/Star.png" alt="4 stars" data-value="4">
                             <img src="./assets/images/Star.png" alt="5 stars" data-value="5">
                         </div>
-                        <!-- Tambahkan input tersembunyi untuk menyimpan bintang yang dipilih -->
+                        <!-- Hidden input to store selected stars -->
                         <input type="hidden" name="clickedStars[]" id="clickedStars">
                         <div class="row justify-content-center">
                             <div class="col-md-6">
                                 <div class="form-upload-pictures">
+                                    <!-- Add photo button -->
                                     <img src="./assets/images/addphoto.png" alt="Add Photo" id="image-upload-button">
                                     <label for="image">Tambahkan Gambar</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-upload-videos">
+                                    <!-- Add video button -->
                                     <img src="./assets/images/addvideo.png" alt="Add Video" id="video-upload-button">
                                     <label for="video">Tambahkan Video</label>
                                 </div>
@@ -53,10 +56,11 @@
                         </div>
                         <div class="row2 justify-content-center">
                             <div class="col-md-12">
-                                <!-- Ubah name pada textarea -->
+                                <!-- Textarea for review text -->
                                 <textarea name="review_text" id="review_text" rows="4" required placeholder="Bagikan pengalamanmu dengan produk ini..."></textarea>
                             </div>
                         </div>
+                        <!-- Submit button -->
                         <button type="submit">Kirim Penilaian</button>
                     </form>
                 </div>
@@ -64,12 +68,18 @@
         </section>
     </div>
 
+    <!-- Footer -->
     @include('layouts.footer')
 
+    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Fancybox JS -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom JS -->
     <script src="./assets/js/crudreview.js"></script>
+    <!-- App JS -->
     <script src="./assets/js/app.js"></script>
 </body>
 </html>

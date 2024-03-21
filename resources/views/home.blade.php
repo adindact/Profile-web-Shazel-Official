@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shazel Official</title>
+    <title>Ellora Official</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -24,9 +24,9 @@
         <div class="container">
             <div class="row text-home">
                 <div class="col-md-6 text-home-left">
-                    <div class="display-2 fw-bold text-hi" data-aos="fade-up">Hi! We’re SHAZEL </div>
+                    <div class="display-2 fw-bold text-hi" data-aos="fade-up">Hi! We’re Ellora </div>
                     <h1 class="text-brand" data-aos="fade-up">Handmade Beads Bracelet </h1>
-                    <div data-aos="fade-up" data-aos-delay="100" class="mt-3 mb-5 text-slogan">SHAZEL dengan semangat
+                    <div data-aos="fade-up" data-aos-delay="100" class="mt-3 mb-5 text-slogan">Ellora dengan semangat
                         kreatif dengan gelang manik-manik yang casual.</div>
                     <div data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-brand">view our
                             product</a>
@@ -59,7 +59,7 @@
                             <h1>About us</h1>
                         </div>
                         <div class="text-home-about-us">
-                            <p>SHAZEL merupakan brand lokal di industri fashion aksesoris yang mengutamakan casual
+                            <p>Ellora merupakan brand lokal di industri fashion aksesoris yang mengutamakan casual
                                 elegan
                                 karena kami percaya bahwa dengan seseorang menambah sentuhan aksen pemanis dari
                                 aksesoris
@@ -275,7 +275,7 @@
                                         <div class="col ">
                                             <div class="row ">
                                                 <div class="col text-profile">
-                                                    Name User
+                                                    User
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -318,7 +318,7 @@
                                         <div class="col ">
                                             <div class="row ">
                                                 <div class="col text-profile">
-                                                    Name User
+                                                    User
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -360,7 +360,7 @@
                                         <div class="col ">
                                             <div class="row ">
                                                 <div class="col text-profile">
-                                                    Name User
+                                                    User
                                                 </div>
                                             </div>
                                             <div class="row">
