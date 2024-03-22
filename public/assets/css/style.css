@@ -389,8 +389,8 @@ img {
     color: var(--c-dark);
     border-color: var(--dark);
 }
-.btn-review,
-.btn-review:focus {
+.btn-review1,
+.btn-review1:focus {
     align-items: center;
     background-color: var(--c-dark);
     color: var(--c-light3);
@@ -401,7 +401,7 @@ img {
 }
 
 
-.btn-review:hover {
+.btn-review1:hover {
     background-color: transparent;
     color: var(--c-dark);
     border-color: var(--dark);
@@ -892,6 +892,23 @@ footer ul li {
     color: var(--c-light3);
     font-size: 30px;
     font-weight:700px;
+}
+
+.btn-review,
+.btn-review:focus {
+    background-color: var(--c-dark);
+    color: var(--c-light3);
+    border-color: var(--c-dark);
+    border-radius: 30px;
+    position: relative;
+    margin-left: -10px;
+    margin-bottom: 10px;;
+}
+
+.btn-review:hover {
+    background-color: transparent;
+    color: var(--c-dark);
+    border-color: var(--c-dark);
 }
 
 

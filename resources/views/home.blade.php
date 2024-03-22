@@ -402,7 +402,7 @@
 
                     </div>
                     <div class="col">
-                        <div data-aos="fade-down" data-aos-delay="200"><a href="#" class="btn btn-review">Add
+                        <div data-aos="fade-down" data-aos-delay="200"><a href="/crudreview" class="btn btn-review1">Add
                                 review</a>
                         </div>
                     </div>

@@ -2,41 +2,78 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Review;
+use App\Models\User;
 
 class ReviewController extends Controller
 {
+    //
     public function index()
     {
         $reviews = Review::all();
         return view('reviews.index', compact('reviews'));
     }
 
-    public function create()
+    public function createReview()
     {
-        return view('reviews.create');
+        return view('createReview');
     }
 
-    public function store(Request $request)
+    public function processCreateReview(Request $request)
     {
-        // Validasi data
-        $request->validate([
-            // sesuaikan dengan aturan validasi yang dibutuhkan
+        // Validasi inputan form
+        $validatedData = $request->validate([
+            'review_text' => 'required',
+            'rating' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // tambahkan validasi untuk gambar
+            'video' => 'nullable|mimes:mp4,webm,ogg|max:20000', // tambahkan validasi untuk video (20 MB maksimum)
         ]);
 
-        // Simpan data review
-        Review::create([
-            // sesuaikan dengan nama kolom pada model Review
-            'user_id' => $request->user_id,
-            'product_id' => $request->product_id,
-            'review_text' => $request->review_text,
-            'rating' => $request->rating,
-            'image' => $request->image,
-            'video' => $request->video,
-        ]);
+        // Simpan data ke database
+        $review = new Review;
+        $review->id = Auth::id(); // Mengambil ID pengguna yang sedang login
+        $review->review_text = $request->review_text;
+        $review->rating = $request->rating;
 
-        return redirect()->route('reviews.index')->with('success', 'Review berhasil ditambahkan.');
+        // Upload gambar jika ada
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $review->image = $imagePath;
+        }
+
+        // Upload video jika ada
+        if ($request->hasFile('video')) {
+            $videoPath = $request->file('video')->store('videos', 'public');
+            $review->video = $videoPath;
+        }
+
+        $review->save();
+
+        return redirect()->route('showReview');
     }
+    public function showReview()
+    {
+        // Mengambil semua review
+        $reviews = Review::all();
 
+        // Mengambil semua pengguna (users) untuk menghindari pengecekan berulang
+        $users = User::all()->keyBy('id');
+
+        // Melooping semua review untuk menetapkan nama pengguna
+        foreach ($reviews as $review) {
+            // Memeriksa apakah pengguna dengan ID review ditemukan
+            if (isset ($users[$review->id])) {
+                // Menetapkan nama pengguna ke dalam properti baru pada objek review
+                $review->username = $users[$review->id]->name;
+            } else {
+                // Jika pengguna tidak ditemukan, menetapkan nilai default atau melakukan penanganan lain sesuai kebutuhan
+                $review->username = 'Unknown'; // Nilai default jika pengguna tidak ditemukan
+            }
+        }
+
+        // Mengirimkan data review dan pengguna ke view
+        return view('review', ['reviews' => $reviews, 'users' => $users]);
+    }
 }

@@ -5,6 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
 class Review extends Model
 {
     use HasFactory;
@@ -22,10 +27,11 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'product_id',
+        'id',
         'review_text',
         'rating',
+        'image', // Tambahkan 'image' ke dalam $fillable
+        'video', // Tambahkan 'video' ke dalam $fillable
     ];
 
     /**
@@ -41,6 +47,7 @@ class Review extends Model
      */
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_id', 'kode');
+        return $this->belongsTo(Product::class, 'id');
     }
 }
+

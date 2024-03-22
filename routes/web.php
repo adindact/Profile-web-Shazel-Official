@@ -16,9 +16,7 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 Route::get('/createProduct', function () {
     return view('createProduct');
 });
@@ -40,9 +38,9 @@ Route::get('/about', function () {
 Route::get('/tabel', function () {
     return view('template-tabel');
 });
-Route::get('/review', function () {
-    return view('review');
-});
+// Route::get('/review', function () {
+//     return view('review');
+// });
 Route::get('/crudreview', function () {
     return view('crudreview');
 });
@@ -64,13 +62,19 @@ Route::get('/product/{product}/update', [App\Http\Controllers\AdminController::c
 Route::patch('/productUpdate/{kode}', [App\Http\Controllers\AdminController::class, 'processUpdateProduct'])->name('admin.prosesUpdateProduct');
 Route::delete('/product/{product:kode}', [App\Http\Controllers\AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
 Route::delete('/users/{users:id}', [App\Http\Controllers\AdminController::class, 'deleteUsers'])->name('admin.deleteUsers');
-<<<<<<< HEAD
 
-Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
-Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
-Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
-=======
-Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
-Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
-Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
->>>>>>> 674f225f71ea2a811099fb7f6c915904f161a3f8
+// Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+// Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
+// Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+
+Route::post('/create-review', [App\Http\Controllers\ReviewController::class, 'processCreateReview'])->name('CreateReview');
+Route::get('/review', [App\Http\Controllers\ReviewController::class, 'showReview'])->name('showReview');
+Route::get('/', function () {
+    // Buat instance dari ReviewController
+    $reviewController = new ReviewController();
+
+    // Panggil metode showReview dari instance ReviewController
+    $reviews = $reviewController->showReview();
+
+    return view('home', compact('reviews'));
+});

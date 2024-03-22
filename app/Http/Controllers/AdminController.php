@@ -91,8 +91,6 @@ class AdminController extends Controller
         return view('dataReview', ['reviews' => $reviews]);
     }
 
-
-
     public function updateProduct(Product $product){
         return view('updateProduct', ['product' => $product]);
     }
