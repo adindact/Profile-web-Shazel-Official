@@ -36,8 +36,7 @@
                                 <!-- Nama pengguna -->
                                 <div class="user-info">
                                     @php
-                                        $data->name = $users[$data->id]->name;
-                                    @endphp
+                                        $userData = isset($users[$data->id]) ? $users[$data->id] : null;                                    @endphp
                                     <h4>{{ $data->name }}</h4>
                                     <!-- Rating -->
                                     <div class="ratings">
