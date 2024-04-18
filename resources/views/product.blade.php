@@ -21,7 +21,7 @@
 
     <!-- Home -->
     <!-- Home -->
-<section id="home" class="d-flex align-items-center min-vh-100">
+<section id="home" style="padding-top: 150px;" class="d-flex align-items-center min-vh-100">
     <div class="container justify-content-center">
         <div class="row">
             @foreach ($product as $data)
