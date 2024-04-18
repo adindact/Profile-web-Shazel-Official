@@ -1,6 +1,6 @@
 <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">ellora</a>
+        <a class="navbar-brand" href="#">ELLORA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,16 +15,20 @@
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="{{ url('/about') }}">About us</a>
+                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="{{ url('/about') }}">About
+                        us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('product') ? 'active' : '' }}" href="{{ url('/product') }}">Product</a>
+                    <a class="nav-link {{ Request::is('product') ? 'active' : '' }}"
+                        href="{{ url('/product') }}">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('layanan') ? 'active' : '' }}" href="{{ url('/layanan') }}">Layanan</a>
+                    <a class="nav-link {{ Request::is('layanan') ? 'active' : '' }}"
+                        href="{{ url('/layanan') }}">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('review') ? 'active' : '' }}" href="{{ url('/review') }}">Review</a>
+                    <a class="nav-link {{ Request::is('review') ? 'active' : '' }}"
+                        href="{{ url('/review') }}">Review</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -42,11 +46,28 @@
                                         fill="white" />
                                 </svg>
                             </div>
-                            <div class="col">
-                                <a class="nav-link active" href="#">Hi {{ auth()->user()->name }}</a>
-                            </div>
+                            @if (auth()->check() && auth()->user()->role == 1)
+                                <div class="col">
+                                    <a class="nav-link active" href="/lihatdata">Hi {{ auth()->user()->name }}</a>
+                                </div>
+                            @else
+                                <div class="col">
+                                    <a class="nav-link active" href="#">Hi {{ auth()->user()->name }}</a>
+                                </div>
+                            @endif
                         </div>
                     </li>
+                    {{-- <li>
+                        <div class="div data">
+                            <svg width="25" height="26" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5.10526V13.3158C1 13.3158 1 17.421 10.6584 17.421C20.3167 17.421 20.3167 13.3158 20.3167 13.3158V5.10526" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.6584 1C20.3167 1 20.3167 5.10526 20.3167 5.10526C20.3167 5.10526 20.3167 9.21052 10.6584 9.21052C1 9.21052 1 5.10526 1 5.10526C1 5.10526 1 1 10.6584 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.6584 25.6316C1 25.6316 1 21.5263 1 21.5263V13.3158" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21.6965 25.6316C23.2206 25.6316 24.4561 24.4063 24.4561 22.8947C24.4561 21.3832 23.2206 20.1579 21.6965 20.1579C21.1939 20.1579 20.7227 20.2912 20.3168 20.5241C19.492 20.9973 18.937 21.8817 18.937 22.8947C18.937 23.9078 19.492 24.7922 20.3168 25.2654C20.7227 25.4983 21.1939 25.6316 21.6965 25.6316Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21.6967 27C23.9828 27 25.836 25.1621 25.836 22.8947C25.836 20.6274 23.9828 18.7895 21.6967 18.7895C19.4105 18.7895 17.5574 20.6274 17.5574 22.8947C17.5574 25.1621 19.4105 27 21.6967 27Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.81 38.75"/>
+                                </svg>
+                        </div>
+                    </li> --}}
                     <li>
                         <div class="div pt-2 nav-logout">
                             <a href="/logout">

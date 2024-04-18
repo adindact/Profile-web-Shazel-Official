@@ -65,11 +65,11 @@
                                     </svg>
                                 </div>
                                 <div class="col">
-                                    Alamat Email
+                                    Alamat Email: tashamaharani81@gmail.com
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        {{-- <li>
                             <div class="row">
                                 <div class="col-1">
                                     <svg width="31" height="23" viewBox="0 0 31 23" fill="none"
@@ -86,7 +86,7 @@
                                     Youtube
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                         <li>
                             <div class="row">
                                 <div class="col-1">
@@ -104,7 +104,8 @@
                                     </svg>
                                 </div>
                                 <div class="col">
-                                    Instagram
+                                    Instagram:_ellora
+
                                 </div>
                             </div>
                         </li>
@@ -120,7 +121,7 @@
                                     </svg>
                                 </div>
                                 <div class="col">
-                                    Nomor
+                                    Nomor: +6281216183546
                                 </div>
                             </div>
                         </li>
@@ -140,7 +141,7 @@
                                     </svg>
                                 </div>
                                 <div class="col">
-                                    Tiktok
+                                    Tiktok: _ellora
                                 </div>
                             </div>
                         </li>

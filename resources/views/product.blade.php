@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shazel Official</title>
+    <title>Ellora Official</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -34,8 +34,8 @@
                                         <div class="content">
                                             <a href="{{ route('showOneProduct', ['product' => $data->kode]) }}" class="btn btn-outline-light">View Detail</a>
                                         </div>
-                                        
-                                                                            
+
+
                                     </div>
                                 </div>
                             </div>
@@ -53,14 +53,14 @@
                     </div>
                 </div>
 
-                
+
             @endforeach
         </div>
     </div>
 </section>
 
-    
 
+    @include('layouts.floating')
     @include('layouts.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>

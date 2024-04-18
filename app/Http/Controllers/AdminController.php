@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Review;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -57,6 +58,11 @@ class AdminController extends Controller
         $users = User::all();
         return view('dataUsers', ['users' => $users]);
     }
+    public function adminShowReviews(){
+        $reviews = Review::all();
+        return view('dataReview', ['reviews' => $reviews]);
+    }
+
     public function updateProduct(Product $product){
         return view('updateProduct', ['product' => $product]);
     }
@@ -93,5 +99,9 @@ class AdminController extends Controller
     public function deleteUsers(User $users){
         $users->delete();
         return redirect()->route('admin.ShowUsers');
+    }
+    public function deleteReviews(Review $reviews){
+        $reviews->delete();
+        return redirect()->route('admin.ShowReviews');
     }
 }

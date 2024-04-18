@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shazel Official</title>
+    <title>Ellora Official</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -55,7 +55,7 @@
                         <h1>About us</h1>
                     </div>
                     <div class="text-about-us text-center">
-                        <p>SHAZEL merupakan brand lokal di industri fashion aksesoris yang mengutamakan casual
+                        <p>Ellora merupakan brand lokal di industri fashion aksesoris yang mengutamakan casual
                             elegan
                             karena kami percaya bahwa dengan seseorang menambah sentuhan aksen pemanis dari
                             aksesoris
@@ -75,13 +75,13 @@
                         <h1>History</h1>
                     </div>
                     <div class="text-about-us2 text-center">
-                        <p>Shazel Beads Bracelet adalah sebuah Usaha Mikro, Kecil, dan Menengah (UMKM) yang berdiri pada
+                        <p>Ellora Beads Bracelet adalah sebuah Usaha Mikro, Kecil, dan Menengah (UMKM) yang berdiri pada
                             akhir September 2023 di Malang, didirikan oleh seorang mahasiswa dari salah satu kampus
                             ternama di daerah tersebut. Berawal dari minat yang mendalam terhadap manik-manik dan
-                            keinginan untuk menciptakan variasi yang beragam dalam aksesori fashion, Shazel Beads
+                            keinginan untuk menciptakan variasi yang beragam dalam aksesori fashion, Ellora Beads
                             Bracelet menghadirkan gelang-gelang handmade yang tidak hanya estetis, tetapi juga
                             bermanfaat dalam kegiatan sehari-hari. Dengan inspirasi dari tema Bali yang dipadukan dengan
-                            sentuhan keanggunan dan keunikan, produk-produk Shazel memiliki ciri khas tersendiri,
+                            sentuhan keanggunan dan keunikan, produk-produk Ellora memiliki ciri khas tersendiri,
                             seperti untaian pita rumbai di ujung serta nama-nama produk yang unik dengan tema nama peri.
                         </p>
                     </div>
@@ -115,8 +115,8 @@
                         <h1>Jam Operasional</h1>
                     </div>
                     <div class="text-about-us2 text-center">
-                        <p>Jam operasional untuk Shazel adalah dari pukul 07.00 hingga 21.00 WIB. Selama periode ini,
-                            layanan dan fasilitas Shazel Official akan tersedia untuk memenuhi kebutuhan pelanggan dan
+                        <p>Jam operasional untuk Ellora adalah dari pukul 07.00 hingga 21.00 WIB. Selama periode ini,
+                            layanan dan fasilitas Ellora Official akan tersedia untuk memenuhi kebutuhan pelanggan dan
                             memberikan
                             pengalaman yang menyenangkan bagi setiap pelanggan.
                         </p>
@@ -144,10 +144,10 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                Alamat Email
+                                Alamat Email: tashamaharani81@gmail.com
                             </div>
                         </div>
-                        <div class="row section-kontak">
+                        {{-- <div class="row section-kontak">
                             <div class="col-1">
                                 <svg width="31" height="23" viewBox="0 0 31 23" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +162,7 @@
                             <div class="col">
                                 Youtube
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row section-kontak">
                             <div class="col-1">
                                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none"
@@ -179,7 +179,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                Instagram
+                                Instagram: _ellora
                             </div>
                         </div>
                         <div class="row section-kontak">
@@ -193,7 +193,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                Nomor
+                                Nomor: +6281216183546
                             </div>
                         </div>
                         <div class="row section-kontak">
@@ -211,7 +211,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                Tiktok
+                                Tiktok: _ellora
                             </div>
                         </div>
                     </div>
@@ -243,7 +243,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                Shopee
+                                Shopee: tashaamaharani
                             </div>
                         </div>
                         <div class="row section-olshop">
@@ -253,7 +253,7 @@
                                     </svg>
                             </div>
                             <div class="col">
-                                Instagram
+                                Instagram: _ellora
                             </div>
                         </div>
                     </div>
@@ -266,6 +266,7 @@
     </div>
     </div>
 
+    @include('layouts.floating')
     @include('layouts.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
