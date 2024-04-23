@@ -270,7 +270,7 @@
                                 <div class=" background-items-review">
                                     <div class="row">
                                         <div class="col-sm-5 profile-user">
-                                            <img src="./assets/images/avatar-2.jpg" alt="" class=foto-profile>
+                                            <img src="./assets/images/profil.jpeg" alt="" class=foto-profile>
                                         </div>
                                         <div class="col ">
                                             <div class="row ">
@@ -313,7 +313,7 @@
                                 <div class=" background-items-review">
                                     <div class="row">
                                         <div class="col-sm-5 profile-user">
-                                            <img src="./assets/images/avatar-2.jpg" alt="" class=foto-profile>
+                                            <img src="./assets/images/profil.jpeg" alt="" class=foto-profile>
                                         </div>
                                         <div class="col ">
                                             <div class="row ">
@@ -355,7 +355,7 @@
                                 <div class=" background-items-review">
                                     <div class="row">
                                         <div class="col-sm-5 profile-user">
-                                            <img src="./assets/images/avatar-2.jpg" alt="" class=foto-profile>
+                                            <img src="./assets/images/profil.jpeg" alt="" class=foto-profile>
                                         </div>
                                         <div class="col ">
                                             <div class="row ">
@@ -410,11 +410,11 @@
 
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="/review" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only"></span>
                 </a>
-                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <a class="carousel-control-next" href="/review" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only"></span>
                 </a>
@@ -424,7 +424,6 @@
 
     @include('layouts.floating')
     @include('layouts.footer')
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>

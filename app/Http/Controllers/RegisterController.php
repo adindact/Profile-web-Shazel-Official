@@ -25,6 +25,6 @@ class RegisterController extends Controller
         ]);
         $user = User::create($validated);
         auth()->login($user);
-        return redirect('/');
+        return view('login');
     }
 }

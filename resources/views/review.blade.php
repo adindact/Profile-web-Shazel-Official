@@ -3,18 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review | Ellora Official</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/review.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
+
     <!-- Navbar -->
     @include('layouts.navbar')
+
     <div class="containerreview">
         <section class="py-4">
             <div class="row justify-content-center">
@@ -31,12 +35,13 @@
                             {{-- Profile Pengguna --}}
                             <div class="profile-info">
                                 <!-- Foto profil pengguna -->
-                                <img src="./assets/images/avatar-2.jpg" alt="Foto Profil Pengguna"
+                                <img src="./assets/images/profil.jpeg" alt="Foto Profil Pengguna"
                                     class="profile-picture">
                                 <!-- Nama pengguna -->
                                 <div class="user-info">
                                     @php
-                                        $userData = isset($users[$data->id]) ? $users[$data->id] : null;                                    @endphp
+                                        $data->name = $users[$data->id]->name;
+                                    @endphp
                                     <h4>{{ $data->name }}</h4>
                                     <!-- Rating -->
                                     <div class="ratings">
@@ -53,15 +58,21 @@
                             <!-- Bukti testimoni -->
                             <br>
                             <div class="row">
-                                <div class="col">
-                                    <img src="{{ asset('images/' . $data->images) }}" alt="Bukti Testimoni"
-                                        class="testimony">
-                                </div>
-                                <div class="col">
-                                    <img src="{{ asset('video/' . $data->video) }}" alt="Bukti Testimoni"
-                                        class="testimony">
-                                </div>
+                                @if ($data->images)
+                                    <div class="col">
+                                        <img src="{{ asset('images/' . $data->images) }}" alt="Bukti Testimoni"
+                                            class="testimony">
+                                    </div>
+                                @endif
+
+                                @if ($data->video)
+                                    <div class="col">
+                                        <img src="{{ asset('video/' . $data->video) }}" alt="Bukti Testimoni"
+                                            class="testimony">
+                                    </div>
+                                @endif
                             </div>
+
                             <!-- Ulasan -->
                             <br>
                             <p>{{ $data->review_text }}</p>
@@ -74,15 +85,12 @@
         <a href="/crudreview" class="btn btn-review" role="button">Tambahkan Review</a>
     </div>
 
-
-
+    @include('layouts.floating')
     @include('layouts.footer')
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="./assets/js/review.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 

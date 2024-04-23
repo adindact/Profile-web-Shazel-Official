@@ -21,43 +21,44 @@
 
     <!-- Home -->
     <!-- Home -->
-<section id="home" style="padding-top: 150px;" class="d-flex align-items-center min-vh-100">
-    <div class="container justify-content-center">
-        <div class="row">
-            @foreach ($product as $data)
-                <div class="col d-flex">
-                    <div class="px-5 d-flex" data-aos="fade-up" data-aos-delay="100">
-                        <div class="row mb-5 justify-content-center">
-                            <div class="project background-items-catalog" style="width:250px; height: 250px; background-image: url('{{ asset('storage/' . $data->image) }}'); background-size: cover;">
-                                <div class="row">
-                                    <div class="col colapse button-price">
-                                        <div class="content">
-                                            <a href="{{ route('showOneProduct', ['product' => $data->kode]) }}" class="btn btn-outline-light">View Detail</a>
+    <section id="home" class="d-flex align-items-center min-vh-100" style="padding-top: 100px">
+        <div class="container justify-content-center">
+            <div class="row">
+                @foreach ($product as $data)
+                    <div class="col d-flex">
+                        <div class="px-5 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <div class="row mb-5 justify-content-center">
+                                <div class="project background-items-catalog"
+                                    style="width:250px; height: 250px; background-image: url('{{ asset('storage/' . $data->image) }}'); background-size: cover;">
+                                    <div class="row">
+                                        <div class="col colapse button-price">
+                                            <div class="content">
+                                                <a href="{{ route('showOneProduct', ['product' => $data->kode]) }}"
+                                                    class="btn btn-outline-light">View Detail</a>
+                                            </div>
+
+
                                         </div>
-
-
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row" style="">
-                                <div class=" text-center">
-                                    <div class="">
-                                        {{ $data->nama }}
-                                    </div>
-                                    <div class="">
-                                        Rp. {{ $data->harga }}
+                                <div class="row" style="">
+                                    <div class=" text-center">
+                                        <div class="">
+                                            {{ $data->nama }}
+                                        </div>
+                                        <div class="">
+                                            Rp. {{ $data->harga }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 
     @include('layouts.floating')
