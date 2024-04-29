@@ -95,45 +95,57 @@ class AdminController extends Controller
         return view('updateProduct', ['product' => $product]);
     }
 
-    public function processUpdateProduct(Request $request){
-        // Validasi data yang dikirimkan oleh formulir
-        $validatedData = $request->validate([
-            'kode' => 'required',
-            'nama' => 'required',
-            'deskripsi' => 'required',
-            'harga' => 'required',
-            'ukuran' => 'required',
-            'bahan' => 'required',
-            'perawatan' => 'required',
-            'shopee' => 'required',
-            'image' => 'image|max:5048', // Gambar bersifat opsional
-        ]);
+    public function processUpdateProduct(Request $request)
+{
+    // Validasi data yang dikirimkan oleh formulir
+    $validatedData = $request->validate([
+        'kode' => 'required',
+        'nama' => 'required',
+        'deskripsi' => 'required',
+        'harga' => 'required',
+        'ukuran' => 'required',
+        'bahan' => 'required',
+        'perawatan' => 'required',
+        'shopee' => 'required',
+        'image' => 'image|max:5048', // Gambar bersifat opsional
+    ]);
 
-        // Jika ada gambar yang diunggah, simpan gambar baru
-        if ($request->hasFile('image')) {
-            // Hapus gambar lama jika ada
-            Storage::delete('public/' . $request->image->path());
+    // Peroleh produk yang akan diperbarui
+    $product = Product::where('kode', $validatedData['kode'])->first();
 
-            // Simpan gambar baru
-            $imagePath = $request->file('image')->store('public/images');
-            $validatedData['image'] = str_replace('public/', '', $imagePath);
+    // Jika ada gambar yang diunggah, simpan gambar baru
+    if ($request->hasFile('image')) {
+        // Hapus gambar lama jika ada
+        Storage::delete('public/' . $product->image);
+
+        // Simpan gambar baru di lokasi yang sama dengan gambar pertama kali dibuat
+        $imagePath = $request->file('image')->store('post-images', 'public');
+        $validatedData['image'] = $imagePath;
+    } else {
+        // Jika tidak ada gambar baru yang diunggah, gunakan gambar yang sudah ada
+        $validatedData['image'] = $product->image;
+    }
+
+    // Update data produk dengan data yang baru divalidasi
+    $product->update($validatedData);
+
+    return redirect()->route('showProduct');
+}
+
+
+    public function deleteProduct(Product $product)
+    {
+        // Hapus gambar terkait jika ada
+        if ($product->image) {
+            Storage::delete('public/' . $product->image);
         }
 
-        // Update data produk dengan data yang baru divalidasi
-        $product = Product::where('kode', $validatedData['kode'])->first();
-        $product->update($validatedData);
-
-
-
-
-        // Redirect ke halaman yang sesuai, misalnya halaman detail produk
-        return redirect()->route('admin.ShowProduct', ['product' => $product]);
-    }
-
-    public function deleteProduct(Product $product){
+        // Hapus data produk dari basis data
         $product->delete();
+
         return redirect()->route('admin.ShowProduct');
     }
+
     public function deleteUsers(User $users){
         $users->delete();
         return redirect()->route('admin.ShowUsers');
