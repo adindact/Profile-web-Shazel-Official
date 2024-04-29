@@ -42,7 +42,7 @@ Route::get('/tabel', function () {
 //     return view('review');
 // });
 Route::get('/crudreview', function () {
-    return view('crudreview');
+    return view('crudreview')->middleware('reviewMiddleware');
 });
 
 route::post('/admin-prosesCreateProduct', [App\Http\Controllers\AdminController::class, 'processCreateProduct'])->name('admin.prosesCreateProduct');
@@ -67,8 +67,8 @@ Route::delete('/users/{users:id}', [App\Http\Controllers\AdminController::class,
 // Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
 // Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
-Route::post('/create-review', [App\Http\Controllers\ReviewController::class, 'processCreateReview'])->name('CreateReview');
-Route::get('/review', [App\Http\Controllers\ReviewController::class, 'showReview'])->name('showReview');
+Route::post('/create-review', [App\Http\Controllers\ReviewController::class, 'processCreateReview'])->name('CreateReview')->middleware('reviewMiddleware');
+Route::get('/review', [App\Http\Controllers\ReviewController::class, 'showReview'])->name('showReview')->middleware('reviewMiddleware');
 Route::get('/', function () {
     // Buat instance dari ReviewController
     $reviewController = new ReviewController();
